@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+</head>
+
+<body>
+    <!-- root is where all our react app will be injected, its just a container -->
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const Navbar = () => {
+            return( 
+                <nav> 
+                    <a href="https://facebook.com">Facebook</a>
+                    <a href="https://Twitter.com">Twitter</a> 
+                    <a href="https://instagram.com">Instagram</a> 
+                </nav>
+            );
+        }
+
+    ReactDOM.render(
+        <div>
+           <span> Rendering Navbar once: </span>
+            <Navbar />             
+           <span> Rendering Navbar twice: </span>            
+            <Navbar /> 
+
+            <h1> My portfolio </h1>
+            <p> hi! </p>
+        </div>
+        ,
+        document.getElementById("root")
+    )
+    // Note we can only pass one element to ReactDOM.render()
+    // Note we create a junction for Navbar to handle the navigation bar, and now we can render as we need it. 
+    // Also note that the convetion is to write our functions with capital letter (Navbar not navbar), otherwise it will produce an error. 
+
+    </script>
+</body>
+
+</html>
