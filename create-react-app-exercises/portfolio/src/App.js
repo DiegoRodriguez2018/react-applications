@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import './Navbar.js';
+import Navbar from './Navbar.js';
+import Header from './Header.js';
+import Project from './Project.js';
 
 class App extends Component {
   render() {
@@ -9,6 +11,12 @@ class App extends Component {
       <div className="App">
         <Navbar />
         <Header />
+        <Project 
+            name="Rails Project"
+            description ="rails" />
+            <Project name="Holiday Project"
+            description= "in React"  />
+
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
