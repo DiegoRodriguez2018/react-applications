@@ -28,35 +28,44 @@
             );
         }
 
-        const Project = () => {
+        const Project = (props) => {
             return (
-                <h1> Rails Project </h1>
-                <p> Build a coll rails app that solve some problems. </p>
+                <div>
+                    <h1> {props.name} </h1>
+                    <p> Build a cool app {props.description} that solve some problems. </p>
+                </div>
             );
         }
-        // Note we are can to improve this function by passing arguments, check the next exercise.
+        // Note that by default each function receivs a parameter called props.
+        // We pass this parameter when we render the function.
+        // Also note that in JSX you dont use the dollar sign for string interpolation. Just curly brackets. 
 
-    ReactDOM.render(
+    const App = () => {
+        return (
         <div>
            <span> Rendering Navbar once: </span>
             <Navbar />             
            <span> Rendering Navbar twice: </span>            
             <Navbar /> 
-
             <h1> My portfolio </h1>
             <p> hi! </p>
-            <Project />
-            <Project />
-            <Project />
-
+            <Project 
+            name="Rails Project"
+            description ="rails" />
+            <Project name="Holiday Project"
+            description= "in React"  />
         </div>
-        ,
-        document.getElementById("root")
-    )
-    // Note we can only pass one element to ReactDOM.render()
+        );
+    }
     // Note we create a junction for Navbar to handle the navigation bar, and now we can render as we need it. 
     // Also note that the convetion is to write our functions with capital letter (Navbar not navbar), otherwise it will produce an error. 
 
+    ReactDOM.render(
+        <App />,
+        document.getElementById("root")
+    )
+    // Note we can only pass one element to ReactDOM.render()
+    // In dis case we created a function App and render it to make our code dryer.
     </script>
 </body>
 
