@@ -28,13 +28,17 @@
             );
         }
 
-        const Project = () => {
+        const Project = (props) => {
             return (
-                <h1> Rails Project </h1>
-                <p> Build a coll rails app that solve some problems. </p>
+                <div>
+                    <h1> {props.name} </h1>
+                    <p> Build a cool app {props.description} that solve some problems. </p>
+                </div>
             );
         }
-        // Note we are can to improve this function by passing arguments, check the next exercise.
+        // Note that by default each function receivs a parameter called props.
+        // We pass this parameter when we render the function.
+        // Also note that in JSX you dont use the dollar sign for string interpolation. Just curly brackets. 
 
     ReactDOM.render(
         <div>
@@ -45,9 +49,13 @@
 
             <h1> My portfolio </h1>
             <p> hi! </p>
-            <Project />
-            <Project />
-            <Project />
+            <Project 
+            name="Rails Project"
+            description ="rails" />
+
+            <Project name="Holiday Project"
+            description= "in React"  />
+
 
         </div>
         ,
