@@ -14,8 +14,21 @@ class Button extends Component {
   incrementClicks() {
     const currentNum = this.state.numOfClicks;
     this.setState({ numOfClicks: currentNum + 1});
-    this.props.updateClick()
+    this.props.increaseClick()
+    this.props.updateSpecies(this.props.specie, 1)
   }
+
+  decrementClicks() {
+    const currentNum = this.state.numOfClicks;
+    if (currentNum<=0){
+        return 
+    }
+    this.setState({ numOfClicks: currentNum - 1});
+    this.props.decreaseClick()
+    this.props.updateSpecies(this.props.specie, -1)
+
+  }
+
   render() {
     return (
         <div>
@@ -23,6 +36,9 @@ class Button extends Component {
             {this.props.label}
             </button>
             <h4>Number of {this.props.label}: {this.state.numOfClicks} </h4>
+            <button onClick={this.decrementClicks.bind(this)}>
+            Kill animal
+            </button>
         </div>
     )
     
