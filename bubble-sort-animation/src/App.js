@@ -1,62 +1,31 @@
 import React, { Component } from 'react';
 import './App.css';
-import Chartify from 'chartify';
+import Histogram from 'react-chart-histogram';
 
-const dataNumber = 10;
+const dataNumber = 40;
+const data = [];
+const labels = [];
 
-let data = []
-
-for (let index = 1; index <= dataNumber; index++) {
-  let newEntry = {
-    x_value: 'index',
-    y_value: index,
-    title: 'title'
-  }  
-  data.push(newEntry);
+for (let index = 0; index <= dataNumber; index++) {
+  data.push(index);
+  labels.push(`${index}`);
 }
 
-console.log('data',': ', data);
-
-// let data = [{
-//   x_value: '20.11.2016',
-//   y_value: 5,
-//   title: '007 Spectre'
-// },
-// {
-//   x_value: '20.11.2016',
-//   y_value: 5,
-//   title: '007 Spectre'
-// },
-// {
-//   x_value: '20.11.2016',
-//   y_value: 5,
-//   title: '007 Spectre'
-// }];
-
-let config = {
-  theme: 'blue',
-  width: 50,			      
-  height: 10,		
-  box_size: 20,
-  box_radius: 8,
-  line: false,
-  line_only: false,
-  bordered: false
-};
 
 class App extends Component {
   render() {
-    return (
-      <div className="App">
-        <div className="container">
-          <Chartify 
-              data={data} 
-              container="films-container" 
-              config={config} 
-          />
-        </div>
-      </div>
-    );
+    const options = { fillColor: 'lightblue', strokeColor: '#0000FF' };
+  return (
+    <div>
+      <Histogram
+                xLabels={labels}
+                yValues={data}
+                width='1000'
+                height='600'
+                options={options}
+            />
+    </div>
+  )
   }
 }
 

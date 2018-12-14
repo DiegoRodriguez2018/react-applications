@@ -30,3 +30,10 @@
     transform: rotate(360deg);
   }
 }
+
+.container{
+  /* background: dodgerblue; */
+  /* position: absolute;
+  left: 10%;
+  top:30%; */
+}
