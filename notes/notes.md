@@ -148,3 +148,18 @@ export default Navbar;
 
 Note we need to type `export default <function-name>`
 ---
+
+
+### State and lifecycle methods:
+
+A lifecycle method that we have used before is render(). There is many of lifecycle methods but the most useful are:
+  
+* render(): trigerred when loading to screen.
+* componentDidMount(): gets triggered after the constructor. just get triggered once.
+* componentDidUpdate(): triggered anytime react detects something has changed and has to keep track of the component. 
+* componentWillUnmount(): triggered just before the destruction of the element.
+
+there is more info in the documentation:
+https://reactjs.org/docs/state-and-lifecycle.html
+
+
