@@ -36,7 +36,6 @@ class PokeInfo extends Component {
         return (
           <div >
               <h2> Information </h2>
-            
               <h3> {poke.id} : {poke.name}  </h3>
               <h4> Height: {poke.height}: Weight: {poke.weight}</h4>  
           </div>
