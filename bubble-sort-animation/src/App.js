@@ -26,6 +26,28 @@ function shuffle(a) {
 data = shuffle(data);
 
 class App extends Component {
+  state = {
+    data : data
+  }
+  
+  
+  componentDidMount(){
+    const iFrequency=1000;
+    setInterval( ()=>{
+      
+      if (this.state.data){
+        const newData = shuffle(this.state.data);
+        this.setState({data : newData});
+        console.log("test");
+      }else{
+        console.log("loading");
+        
+      }
+    
+
+    }, iFrequency );
+  }
+
   render() {
     const options = { fillColor: 'lightblue', strokeColor: '#0000FF' };
   return (
