@@ -79,10 +79,17 @@ class App extends Component {
     return (
       
       <div>
-        <h1> Bubblesort Algorithm</h1>
-        <p> Bublesort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent pairs and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted. </p>
-        <p> This animation demonstrates how the bubblesort algorithm works. You can add or reduce the number of elementes by filling the input bellow.</p>
-        
+        <div className="title">
+          <h1> Bubblesort Algorithm</h1>
+        </div>
+        <div className="content">
+          <p> Bublesort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent pairs and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted. </p>
+          <p> This animation demonstrates how the bubblesort algorithm works.</p>
+          {/* <p>
+          You can add or reduce the number of elementes by filling the input bellow.
+          </p> */}
+        </div>
+
         <Histogram
           xLabels={labels}
           yValues={this.state.data}

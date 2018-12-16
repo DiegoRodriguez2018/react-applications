@@ -31,9 +31,11 @@
   }
 }
 
-.container{
-  /* background: dodgerblue; */
-  /* position: absolute;
-  left: 10%;
-  top:30%; */
+.title{
+  text-align: center;
+}
+
+.content{
+  padding-left: 5%;
+  padding-right: 5%;
 }
