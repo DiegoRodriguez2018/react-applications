@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Histogram from 'react-chart-histogram';
 
-const dataNumber = 10;
+const dataNumber = 20;
 let data = [];
 let dataSet = []; //array of arrays
 const labels = [];
@@ -48,6 +48,9 @@ for (var i = 0; i < length; i++) {
 console.log('dataSet',': ', dataSet);
 
 class App extends Component {
+  //declaring intervalId, we will use it to stop the setinterval later.
+  intervalId = 0;
+
   state = { 
     data: dataSet[0],
     index: 0,
@@ -55,21 +58,31 @@ class App extends Component {
   }
 
   nextData(){
-    this.setState({
-      data: dataSet[this.state.index +1],
-      index: this.state.index +1
-    });
+    if (dataSet[this.state.index +1]){
+      this.setState({
+        data: dataSet[this.state.index +1],
+        index: this.state.index +1
+      });
+    }else{
+      clearInterval(this.intervalID);
+    }
   }
 
   componentDidMount() {
     const iFrequency = 1000;
-    const intervalId = setInterval(this.nextData.bind(this), iFrequency);
+    this.intervalId = setInterval(this.nextData.bind(this), iFrequency);
   }
+
 
   render() {
     const options = { fillColor: 'lightblue', strokeColor: '#0000FF' };
     return (
+      
       <div>
+        <h1> Bubblesort Algorithm</h1>
+        <p> Bublesort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent pairs and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted. </p>
+        <p> This animation demonstrates how the bubblesort algorithm works. You can add or reduce the number of elementes by filling the input bellow.</p>
+        
         <Histogram
           xLabels={labels}
           yValues={this.state.data}
