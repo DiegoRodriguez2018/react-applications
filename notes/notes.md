@@ -163,3 +163,52 @@ there is more info in the documentation:
 https://reactjs.org/docs/state-and-lifecycle.html
 
 
+---
+
+## React router
+
+We need to install react-router-dom:
+
+https://reacttraining.com/react-router/web/guides/quick-start
+
+There is a package for native and core react as well. (for mobile dev)
+
+To install:
+
+npm install --save react-router-dom
+
+```javascript
+import React, { Component } from 'react';
+import './App.css';
+import Bikes from './Bikes';
+import Bike from './Bike';
+import About from './About';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div>
+          <Route exact path="/" component={Bikes}/>
+          <Route exact path="/bikes" component={Bikes}/>
+          <Route exact path="/bikes/:id" component={Bike}/>
+          <Route path="/About" component={About}/>
+        </div>
+      </Router>
+    );
+  }
+}
+
+export default App;
+
+```
+
+Note we need to do `<Route exact path="/" component={Bikes}/>` because if we dont do exact path match it will render both elementes in /about.
+
+---
+
+### Link component
+
+Link allows you to pass states to the component. 
+
