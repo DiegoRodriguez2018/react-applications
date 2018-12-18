@@ -1,0 +1,250 @@
+{"_id":{"$oid":"5c185cb2af3eea0d45624a4e"},"name":"Angola","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a4f"},"name":"Afghanistan","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a50"},"name":"Anguilla","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a51"},"name":"Albania","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a52"},"name":"Åland Islands","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a53"},"name":"Andorra","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a54"},"name":"Argentina","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a55"},"name":"United Arab Emirates","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a56"},"name":"Armenia","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a57"},"name":"Antarctica","region":"Antarctic"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a58"},"name":"French Southern and Antarctic Lands","region":"Antarctic"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a59"},"name":"American Samoa","region":"Oceania"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a5a"},"name":"Antigua and Barbuda","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a5b"},"name":"Australia","region":"Oceania"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a5c"},"name":"Austria","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a5d"},"name":"Burundi","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a5e"},"name":"Azerbaijan","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a5f"},"name":"Aruba","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a60"},"name":"Belgium","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a61"},"name":"Benin","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a62"},"name":"Bulgaria","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a63"},"name":"Bahrain","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a64"},"name":"Bangladesh","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a65"},"name":"Bahamas","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a66"},"name":"Saint Barthélemy","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a67"},"name":"Bosnia and Herzegovina","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a68"},"name":"Belarus","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a69"},"name":"Saint Helena, Ascension and Tristan da Cunha","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a6a"},"name":"Burkina Faso","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a6b"},"name":"Belize","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a6c"},"name":"Brazil","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a6d"},"name":"Bermuda","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a6e"},"name":"Caribbean Netherlands","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a6f"},"name":"Barbados","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a70"},"name":"Brunei","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a71"},"name":"Bhutan","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a72"},"name":"Bouvet Island","region":"Antarctic"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a73"},"name":"Botswana","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a74"},"name":"Bolivia","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a75"},"name":"Switzerland","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a76"},"name":"Cocos (Keeling) Islands","region":"Oceania"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a77"},"name":"Chile","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a78"},"name":"China","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a79"},"name":"Ivory Coast","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a7a"},"name":"Central African Republic","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a7b"},"name":"Cameroon","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a7c"},"name":"DR Congo","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a7d"},"name":"Canada","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a7e"},"name":"Cook Islands","region":"Oceania"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a7f"},"name":"Comoros","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a80"},"name":"Costa Rica","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a81"},"name":"Cape Verde","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a82"},"name":"Curaçao","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a83"},"name":"Cuba","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a84"},"name":"Republic of the Congo","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a85"},"name":"Colombia","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a86"},"name":"Christmas Island","region":"Oceania"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a87"},"name":"Cayman Islands","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a88"},"name":"Cyprus","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a89"},"name":"Djibouti","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a8a"},"name":"Germany","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a8b"},"name":"Dominica","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a8c"},"name":"Denmark","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a8d"},"name":"Dominican Republic","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a8e"},"name":"Ecuador","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a8f"},"name":"Algeria","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a90"},"name":"Czechia","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a91"},"name":"Egypt","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a92"},"name":"Estonia","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a93"},"name":"Spain","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a94"},"name":"Eritrea","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a95"},"name":"Ethiopia","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a96"},"name":"Finland","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a97"},"name":"Fiji","region":"Oceania"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a98"},"name":"Falkland Islands","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a99"},"name":"France","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a9a"},"name":"Western Sahara","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a9b"},"name":"Gabon","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a9c"},"name":"Faroe Islands","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a9d"},"name":"United Kingdom","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a9e"},"name":"Micronesia","region":"Oceania"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624a9f"},"name":"Guernsey","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624aa0"},"name":"Gibraltar","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624aa1"},"name":"Georgia","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624aa2"},"name":"Guinea","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624aa3"},"name":"Guadeloupe","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624aa4"},"name":"Gambia","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624aa5"},"name":"Ghana","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624aa6"},"name":"Guinea-Bissau","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624aa7"},"name":"Greenland","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624aa8"},"name":"Equatorial Guinea","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624aa9"},"name":"Grenada","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624aaa"},"name":"French Guiana","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624aab"},"name":"Guatemala","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624aac"},"name":"Guam","region":"Oceania"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624aad"},"name":"Guyana","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624aae"},"name":"Greece","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624aaf"},"name":"Hong Kong","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ab0"},"name":"Honduras","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ab1"},"name":"Hungary","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ab2"},"name":"Croatia","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ab3"},"name":"Haiti","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ab4"},"name":"Indonesia","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ab5"},"name":"Isle of Man","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ab6"},"name":"India","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ab7"},"name":"Ireland","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ab8"},"name":"British Indian Ocean Territory","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ab9"},"name":"Iran","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624aba"},"name":"Iceland","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624abb"},"name":"Iraq","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624abc"},"name":"Israel","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624abd"},"name":"Italy","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624abe"},"name":"Jamaica","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624abf"},"name":"Jersey","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ac0"},"name":"Jordan","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ac1"},"name":"Kenya","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ac2"},"name":"Japan","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ac3"},"name":"Kazakhstan","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ac4"},"name":"Kyrgyzstan","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ac5"},"name":"Cambodia","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ac6"},"name":"Saint Kitts and Nevis","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ac7"},"name":"Kiribati","region":"Oceania"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ac8"},"name":"South Korea","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ac9"},"name":"Kosovo","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624aca"},"name":"Lebanon","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624acb"},"name":"Liberia","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624acc"},"name":"Laos","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624acd"},"name":"Libya","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ace"},"name":"Kuwait","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624acf"},"name":"Saint Lucia","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ad0"},"name":"Liechtenstein","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ad1"},"name":"Lesotho","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ad2"},"name":"Sri Lanka","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ad3"},"name":"Latvia","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ad4"},"name":"Luxembourg","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ad5"},"name":"Lithuania","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ad6"},"name":"Saint Martin","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ad7"},"name":"Macau","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ad8"},"name":"Morocco","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ad9"},"name":"Monaco","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ada"},"name":"Moldova","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624adb"},"name":"Heard Island and McDonald Islands","region":"Antarctic"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624adc"},"name":"Madagascar","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624add"},"name":"Marshall Islands","region":"Oceania"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ade"},"name":"Maldives","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624adf"},"name":"Mali","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ae0"},"name":"Malta","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ae1"},"name":"Myanmar","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ae2"},"name":"Montenegro","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ae3"},"name":"Mexico","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ae4"},"name":"Macedonia","region":"Europe"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ae5"},"name":"Mongolia","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ae6"},"name":"Northern Mariana Islands","region":"Oceania"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ae7"},"name":"Montserrat","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ae8"},"name":"Martinique","region":"Americas"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624ae9"},"name":"Mauritania","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624aea"},"name":"Mauritius","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624aeb"},"name":"Malawi","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624aec"},"name":"Malaysia","region":"Asia"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624aed"},"name":"Mayotte","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624aee"},"name":"Mozambique","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624aef"},"name":"Namibia","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624af0"},"name":"New Caledonia","region":"Oceania"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624af1"},"name":"Niger","region":"Africa"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624af2"},"name":"Niue","region":"Oceania"}
+{"_id":{"$oid":"5c185cb2af3eea0d45624af3"},"name":"Norfolk Island","region":"Oceania"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624af4"},"name":"Nicaragua","region":"Americas"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624af5"},"name":"Norway","region":"Europe"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624af6"},"name":"Nigeria","region":"Africa"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624af7"},"name":"Netherlands","region":"Europe"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624af8"},"name":"Nauru","region":"Oceania"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624af9"},"name":"Nepal","region":"Asia"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624afa"},"name":"New Zealand","region":"Oceania"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624afb"},"name":"Oman","region":"Asia"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624afc"},"name":"Pakistan","region":"Asia"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624afd"},"name":"Pitcairn Islands","region":"Oceania"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624afe"},"name":"Peru","region":"Americas"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624aff"},"name":"Palau","region":"Oceania"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b00"},"name":"Panama","region":"Americas"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b01"},"name":"Papua New Guinea","region":"Oceania"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b02"},"name":"Poland","region":"Europe"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b03"},"name":"Puerto Rico","region":"Americas"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b04"},"name":"North Korea","region":"Asia"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b05"},"name":"Portugal","region":"Europe"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b06"},"name":"Paraguay","region":"Americas"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b07"},"name":"Philippines","region":"Asia"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b08"},"name":"Qatar","region":"Asia"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b09"},"name":"French Polynesia","region":"Oceania"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b0a"},"name":"Romania","region":"Europe"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b0b"},"name":"Réunion","region":"Africa"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b0c"},"name":"Russia","region":"Europe"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b0d"},"name":"Rwanda","region":"Africa"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b0e"},"name":"Palestine","region":"Asia"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b0f"},"name":"Senegal","region":"Africa"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b10"},"name":"Singapore","region":"Asia"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b11"},"name":"Sudan","region":"Africa"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b12"},"name":"Saudi Arabia","region":"Asia"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b13"},"name":"Svalbard and Jan Mayen","region":"Europe"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b14"},"name":"Solomon Islands","region":"Oceania"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b15"},"name":"Sierra Leone","region":"Africa"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b16"},"name":"El Salvador","region":"Americas"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b17"},"name":"San Marino","region":"Europe"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b18"},"name":"Somalia","region":"Africa"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b19"},"name":"South Sudan","region":"Africa"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b1a"},"name":"Serbia","region":"Europe"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b1b"},"name":"Saint Pierre and Miquelon","region":"Americas"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b1c"},"name":"São Tomé and Príncipe","region":"Africa"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b1d"},"name":"Suriname","region":"Americas"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b1e"},"name":"Slovakia","region":"Europe"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b1f"},"name":"Slovenia","region":"Europe"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b20"},"name":"Sweden","region":"Europe"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b21"},"name":"Eswatini","region":"Africa"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b22"},"name":"Sint Maarten","region":"Americas"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b23"},"name":"Syria","region":"Asia"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b24"},"name":"Seychelles","region":"Africa"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b25"},"name":"Turks and Caicos Islands","region":"Americas"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b26"},"name":"Chad","region":"Africa"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b27"},"name":"Togo","region":"Africa"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b28"},"name":"Thailand","region":"Asia"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b29"},"name":"Tajikistan","region":"Asia"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b2a"},"name":"Tokelau","region":"Oceania"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b2b"},"name":"Tonga","region":"Oceania"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b2c"},"name":"Timor-Leste","region":"Asia"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b2d"},"name":"Turkmenistan","region":"Asia"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b2e"},"name":"Trinidad and Tobago","region":"Americas"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b2f"},"name":"Tunisia","region":"Africa"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b30"},"name":"Turkey","region":"Asia"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b31"},"name":"Tuvalu","region":"Oceania"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b32"},"name":"Taiwan","region":"Asia"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b33"},"name":"South Georgia","region":"Antarctic"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b34"},"name":"Tanzania","region":"Africa"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b35"},"name":"United States Minor Outlying Islands","region":"Americas"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b36"},"name":"Uruguay","region":"Americas"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b37"},"name":"United States","region":"Americas"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b38"},"name":"Uganda","region":"Africa"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b39"},"name":"Uzbekistan","region":"Asia"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b3a"},"name":"Vatican City","region":"Europe"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b3b"},"name":"Ukraine","region":"Europe"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b3c"},"name":"United States Virgin Islands","region":"Americas"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b3d"},"name":"Venezuela","region":"Americas"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b3e"},"name":"British Virgin Islands","region":"Americas"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b3f"},"name":"Vietnam","region":"Asia"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b40"},"name":"Vanuatu","region":"Oceania"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b41"},"name":"Wallis and Futuna","region":"Oceania"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b42"},"name":"Samoa","region":"Oceania"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b43"},"name":"Yemen","region":"Asia"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b44"},"name":"Zambia","region":"Africa"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b45"},"name":"South Africa","region":"Africa"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b46"},"name":"Saint Vincent and the Grenadines","region":"Americas"}
+{"_id":{"$oid":"5c185cb3af3eea0d45624b47"},"name":"Zimbabwe","region":"Africa"}
