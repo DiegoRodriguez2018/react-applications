@@ -20,6 +20,12 @@ app.use(express.json());
 app.use(cors());
 
 
+app.get('/', (req, res) => {
+  // return all constellations
+  ToDoList.find({})
+    .then(doc => res.json(doc));
+});
+
 app.get('/list', (req, res) => {
   // return all constellations
   ToDoList.find({})

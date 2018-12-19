@@ -9,7 +9,8 @@ const regularRequest = axios.create({
 
 class App extends Component {
   state = {
-    list: []
+    list: [],
+    input: null
   }
 
   getList = () => {
@@ -29,10 +30,16 @@ class App extends Component {
     this.getList()
   }
 
-  handlePost() {
+  handleInputUpdate(e){
+    const {value} = e.target;
+    this.setState({input:value})
+  }
+
+  handlePost(e) {
+    // e.preventDefault();
     console.log('this.state.list', ': ', this.state.list);
     regularRequest.post('/list', {
-      item: 'test'
+      item: this.state.input
     })
     .then(resp => console.log(resp.data))
     .catch(error => {
@@ -62,12 +69,13 @@ class App extends Component {
 
         <form>
           <label for="input-box"> Enter your item: </label>
-          <input type="text" id="input-box"></input>
-          <br></br>
+          <input type="text" id="input-box" onChange={this.handleInputUpdate.bind(this)}></input>
           <button onClick={this.handlePost.bind(this)}> Add Item </button>
+          <br></br>
+          <button onClick={this.deleteAll.bind(this)}> Delete All </button>
         </form>
 
-        <button onClick={this.deleteAll.bind(this)}> Delete All </button>
+
 
       </div>
     );
