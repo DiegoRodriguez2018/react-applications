@@ -48,24 +48,37 @@ class App extends Component {
   }
 
   deleteAll(){
-    regularRequest.delete('/list', {
-      deleteAll: true
-    })
+    regularRequest.delete('/list/deleteAll')
     .then(resp => console.log(resp.data))
     .catch(error => {
       console.log(error);
     });
-
   }
+
+  delete = (event)=>{
+    console.log('event.target',': ', event.target);
+    const {id}=event.target;
+    
+    regularRequest.delete(`/list/delete/${id}`)
+    .then(resp => console.log(resp.data))
+    .catch(error => {
+      console.log(error);
+    });
+  }
+
 
   render() {
     return (
       <div>
-        <ol>
-          {this.state.list.map(doc => {
-            return <li> {doc.item} </li>
+        <form>
+          {this.state.list.map((doc) => {
+            return (
+              <div>
+                <p> {doc.id}.{doc.item}  <button id={doc.id} onClick={this.delete}> Delete </button></p> 
+              </div>
+            )
           })}
-        </ol>
+        </form>
 
         <form>
           <label for="input-box"> Enter your item: </label>

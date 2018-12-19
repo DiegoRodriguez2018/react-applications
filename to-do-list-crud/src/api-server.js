@@ -35,7 +35,6 @@ app.get('/list', (req, res) => {
 app.post('/list', (req, res) => {
   ToDoList.find().exec(function (err, results) {
     const count = results.length
-    console.log('count', ': ', count);
     if (count > 0) {
       console.log('count', ': ', count);
       const item = new ToDoList({ id: (count + 1), item: req.body.item });
@@ -51,8 +50,7 @@ app.post('/list', (req, res) => {
 });
 
 
-app.delete('/list', (req, res) => {
-
+app.delete('/list/deleteAll', (req, res) => {
   ToDoList.deleteMany({}, function (err) {
     if (err) {
       console.log(err)
@@ -61,9 +59,24 @@ app.delete('/list', (req, res) => {
     }
   }
   );
-
   return res.send({ message: "Delete request received" });
 });
+
+app.delete('/list/delete/:id', (req, res) => {
+  //note req.params.id is a string
+  const {id}= req.params;
+    
+  ToDoList.deleteOne({ id: parseInt(id) }, function (err) { if (err) {
+          console.log(err)
+        } else {
+          res.end('Item deleted.');
+        }
+      }
+  );
+  return res.send({ message: "Delete one request received" });
+});
+
+
 
 
 app.listen(3500, () => {
