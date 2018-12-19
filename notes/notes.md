@@ -212,3 +212,10 @@ Note we need to do `<Route exact path="/" component={Bikes}/>` because if we don
 
 Link allows you to pass states to the component. 
 
+
+
+
+---
+### Useful npm  extensions
+1. Axios https://www.npmjs.com/package/axios
+2. Request https://www.npmjs.com/package/request
