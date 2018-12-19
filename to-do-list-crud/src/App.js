@@ -30,9 +30,9 @@ class App extends Component {
     this.getList()
   }
 
-  handleInputUpdate(e){
-    const {value} = e.target;
-    this.setState({input:value})
+  handleInputUpdate(e) {
+    const { value } = e.target;
+    this.setState({ input: value })
   }
 
   handlePost(e) {
@@ -41,52 +41,64 @@ class App extends Component {
     regularRequest.post('/list', {
       item: this.state.input
     })
-    .then(resp => console.log(resp.data))
-    .catch(error => {
-      console.log(error);
-    });
+      .then(resp => console.log(resp.data))
+      .catch(error => {
+        console.log(error);
+      });
   }
 
-  deleteAll(){
+  deleteAll() {
     regularRequest.delete('/list/deleteAll')
-    .then(resp => console.log(resp.data))
-    .catch(error => {
-      console.log(error);
-    });
+      .then(resp => console.log(resp.data))
+      .catch(error => {
+        console.log(error);
+      });
   }
 
-  delete = (event)=>{
-    console.log('event.target',': ', event.target);
-    const {id}=event.target;
-    
+  delete = (event) => {
+    console.log('event.target', ': ', event.target);
+    const { id } = event.target;
+
     regularRequest.delete(`/list/delete/${id}`)
-    .then(resp => console.log(resp.data))
-    .catch(error => {
-      console.log(error);
-    });
+      .then(resp => console.log(resp.data))
+      .catch(error => {
+        console.log(error);
+      });
   }
 
 
   render() {
     return (
       <div>
-        <form>
-          {this.state.list.map((doc) => {
-            return (
-              <div>
-                <p> {doc.id}.{doc.item}  <button id={doc.id} onClick={this.delete}> Delete </button></p> 
-              </div>
-            )
-          })}
-        </form>
-
-        <form>
-          <label for="input-box"> Enter your item: </label>
+        <form className="input-area">
+          <label htmlFor="input-box"> Enter your item: </label>
           <input type="text" id="input-box" onChange={this.handleInputUpdate.bind(this)}></input>
           <button onClick={this.handlePost.bind(this)}> Add Item </button>
-          <br></br>
+          ||
           <button onClick={this.deleteAll.bind(this)}> Delete All </button>
         </form>
+
+        <form className="to-do-list">
+          <table>
+            <thead>
+              <tr>
+                <th>To Do List</th>
+                <th> </th>
+              </tr>
+            </thead>
+            {this.state.list.map((doc, index) => {
+              return (
+                <tbody key={index}>
+                  <tr>
+                    <td>{doc.id}.{doc.item}</td>
+                    <td><button id={doc.id} onClick={this.delete}> X </button></td>
+                  </tr>
+                </tbody>
+              )
+            })}
+          </table>
+        </form>
+
 
 
 

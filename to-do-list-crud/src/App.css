@@ -22,11 +22,19 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+table {
+  border: 1px solid grey;
+  min-width: 400px;
+}
+
+.input-area{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  padding-bottom: 40px;
+}
+
+.to-do-list{
+  display: flex;
+  justify-content: center;
 }
