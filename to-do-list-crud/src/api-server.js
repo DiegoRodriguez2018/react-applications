@@ -32,6 +32,14 @@ app.get('/list', (req, res) => {
     .then(doc => res.json(doc));
 });
 
+app.get('/list/:id', (req, res) => {
+  //find the item with the same id
+  const {id}= req.params;
+  
+  ToDoList.find({ id: parseInt(id) })
+    .then(doc => res.json(doc));
+});
+
 app.post('/list', (req, res) => {
   ToDoList.find().exec(function (err, results) {
     const count = results.length

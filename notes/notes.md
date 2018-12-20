@@ -207,15 +207,89 @@ export default App;
 Note we need to do `<Route exact path="/" component={Bikes}/>` because if we dont do exact path match it will render both elementes in /about.
 
 ---
+### Middleware on Express
+
+``` javascript
+const port = 3000;
+
+
+
+// this is some middleware we have been using
+app.use(express.json())
+
+//but we can write our own
+// note that nextProcess its written often just like next, and in this case will be the call back of the app.get function. 
+//if we dont call nextProcess(); (or next();) it will just get stuck in our custom middleware
+app.use((req, res, nextProcess)=>{
+    req.didRunThroughMiddleware = "it run"
+    nextProcess();
+})
+
+// if we do app.use(<middleware>) this will run for all our routes
+app.get('/', (req,res)=> {
+    console.log(req.didRunThroughMiddleware);
+    return res.send ('hi from api');
+})
+
+//if we want to run some middleware but only on some routes we need first to store the middleware in a const, and declare it as an arrow function.
+
+const checkUser = (req, res, next) => {
+  console.log('checking user')
+  const { username, password } = req.body;
+  console.log('username',': ', username);
+  
+  const user = users.find(u => u.username === username);
+  if (!user) {
+    return res.status(404).send('user does not exist');
+  }
+  if (user.password !== password) {
+    return res.status(401).send('password does not match');
+  }
+  req.user = user;
+  next();
+};
+
+const checkBigBoss = (req,res, next) => {
+    console.log('checking big boss credentials')
+    const {role} = req.user;
+    console.log('role',': ', role);
+    
+    // const { username, password } = req.body;
+
+    if (role !== "big boss") {
+      return res.status(403).send('you have no rights');
+    }
+    next();
+}
+
+// Then we can specify what middleware we need:
+// Note that req, and res are "jumping" from process to process. 
+app.post('/big-boss-page', checkUser, checkBigBoss,  (req,res)=>{
+    console.log("welcome big boss");
+    return res.send('welcome big boss');
+})
+
+
+app.listen(port, () => console.log('running on port', port));
+
+```
+---
 
 ### Link component
-
 Link allows you to pass states to the component. 
 
 
 
-
+---
+### Handy tips:
+* window.location gives information of the href of current page, and we can use it to extract the pathname. eg. window.location.pathname = /list/2
+* But, also in react we have access to this.props, which also give us access to this.props.match.params = {id: "2"}
+* `return res.status(404).send("User does not exist")` note you can add a status in your return with res.status otherwise it will be 200 by default. 
+  
 ---
 ### Useful npm  extensions
-1. Axios https://www.npmjs.com/package/axios
-2. Request https://www.npmjs.com/package/request
+1. axios https://www.npmjs.com/package/axios
+2. request https://www.npmjs.com/package/request
+3. joi
+4. react-router-dom
+5. 
