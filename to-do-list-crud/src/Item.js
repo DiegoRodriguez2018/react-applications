@@ -47,17 +47,17 @@ class List extends Component {
 
     }
 
-    handleUpdate(e) {
-        // e.preventDefault();
+    // handleUpdate(e) {
+    //     // e.preventDefault();
 
-        regularRequest.put(`/list/${id}`, {
-            item: this.state.input
-        })
-            .then(resp => console.log(resp.data))
-            .catch(error => {
-                console.log(error);
-            });
-    }
+    //     regularRequest.put(`/list/${id}`, {
+    //         item: this.state.input
+    //     })
+    //         .then(resp => console.log(resp.data))
+    //         .catch(error => {
+    //             console.log(error);
+    //         });
+    // }
 
     render() {
         const { item } = this.state
@@ -70,7 +70,7 @@ class List extends Component {
                     <form className="input-area">
                         <label htmlFor="input-box"> Update Description: </label>
                         <input type="text" id="input-box" onChange={this.handleInputUpdate.bind(this)}></input>
-                        <button onClick={this.handleUpdate.bind(this)}> Update </button>
+                        {/* <button onClick={this.handleUpdate.bind(this)}> Update </button> */}
                     </form>
 
                 </div>
