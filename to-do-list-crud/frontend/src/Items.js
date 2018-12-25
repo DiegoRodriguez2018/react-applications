@@ -8,20 +8,22 @@ const regularRequest = axios.create({
 
 
 class Items extends Component {
+    modelPath = '/items/'
+
     state = {
-        list: [],
+        items: [],
         input: null
     }
 
     getItems = () => {
-        const url = 'http://127.0.0.1:3500/items'
+        const url = `http://127.0.0.1:3500${this.modelPath}`
         fetch(url)
             .then(response => {
                 return response.json()
             })
-            .then(list => {
+            .then(items => {
                 console.log('items',': ', items);
-                this.setState({ list: list })
+                this.setState({ items: items })
             })
     }
 
@@ -36,8 +38,8 @@ class Items extends Component {
 
     handlePost(e) {
         // e.preventDefault();
-        console.log('this.state.list', ': ', this.state.list);
-        regularRequest.post('/items', {
+        console.log('this.state.items', ': ', this.state.items);
+        regularRequest.post(`${this.modelPath}`, {
             item: this.state.input
         })
             .then(resp => console.log(resp.data))
@@ -47,7 +49,7 @@ class Items extends Component {
     }
 
     deleteAll() {
-        regularRequest.delete('/items/deleteAll')
+        regularRequest.delete(`${this.modelPath}deleteAll`)
             .then(resp => console.log(resp.data))
             .catch(error => {
                 console.log(error);
@@ -58,13 +60,12 @@ class Items extends Component {
         console.log('event.target', ': ', event.target);
         const { id } = event.target;
 
-        regularRequest.delete(`/items/delete/${id}`)
+        regularRequest.delete(`${this.modelPath}delete/${id}`)
             .then(resp => console.log(resp.data))
             .catch(error => {
                 console.log(error);
             });
     }
-
 
     render() {
         return (
@@ -85,12 +86,12 @@ class Items extends Component {
                                 <th> </th>
                             </tr>
                         </thead>
-                        {this.state.list.map((doc, index) => {
+                        {this.state.items.map((doc, index) => {
                             return (
                                 <tbody key={index}>
                                     <tr>
                                         <td>{doc.id}.{doc.item}</td>
-                                        <td> <a href={"/items/"+doc.id}> Update </a></td>
+                                        <td> <a href={this.modelPath+doc.id}> Update </a></td>
                                         <td><button id={doc.id} onClick={this.delete}> Delete </button></td>
                                     </tr>
                                 </tbody>
