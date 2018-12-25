@@ -1,19 +1,16 @@
-const DbHandler = require('./Db')
-
-const Db = new DbHandler('Item'); 
-//DbHandler(<ModelName>)
-
-//configuring mongoose 
-Db.setup();
-
 // const Joi = require('joi');
 const express = require('express');
 const cors = require('cors');
+const DbHandler = require('./Db')
+
+//         new DbHandler(<ModelName>)
+const Db = new DbHandler('Item'); 
+//setup() will configure mongoose 
+Db.setup();
 
 // Setting up express.js
 const app = express();
 app.use(express.json());
-
 app.use(cors());
 
 app.get('/', Db.getAll);

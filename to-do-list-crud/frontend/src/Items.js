@@ -7,27 +7,26 @@ const regularRequest = axios.create({
 });
 
 
-class List extends Component {
+class Items extends Component {
     state = {
         list: [],
         input: null
     }
 
-    getList = () => {
-        const url = 'http://127.0.0.1:3500/list'
+    getItems = () => {
+        const url = 'http://127.0.0.1:3500/items'
         fetch(url)
             .then(response => {
                 return response.json()
             })
             .then(list => {
-                console.log('list', ': ', list);
+                console.log('items',': ', items);
                 this.setState({ list: list })
-
             })
     }
 
     componentDidMount() {
-        this.getList()
+        this.getItems()
     }
 
     handleInputUpdate(e) {
@@ -38,7 +37,7 @@ class List extends Component {
     handlePost(e) {
         // e.preventDefault();
         console.log('this.state.list', ': ', this.state.list);
-        regularRequest.post('/list', {
+        regularRequest.post('/items', {
             item: this.state.input
         })
             .then(resp => console.log(resp.data))
@@ -48,7 +47,7 @@ class List extends Component {
     }
 
     deleteAll() {
-        regularRequest.delete('/list/deleteAll')
+        regularRequest.delete('/items/deleteAll')
             .then(resp => console.log(resp.data))
             .catch(error => {
                 console.log(error);
@@ -59,7 +58,7 @@ class List extends Component {
         console.log('event.target', ': ', event.target);
         const { id } = event.target;
 
-        regularRequest.delete(`/list/delete/${id}`)
+        regularRequest.delete(`/items/delete/${id}`)
             .then(resp => console.log(resp.data))
             .catch(error => {
                 console.log(error);
@@ -91,7 +90,7 @@ class List extends Component {
                                 <tbody key={index}>
                                     <tr>
                                         <td>{doc.id}.{doc.item}</td>
-                                        <td> <a href={"/list/"+doc.id}> Update </a></td>
+                                        <td> <a href={"/items/"+doc.id}> Update </a></td>
                                         <td><button id={doc.id} onClick={this.delete}> Delete </button></td>
                                     </tr>
                                 </tbody>
@@ -108,4 +107,4 @@ class List extends Component {
     }
 }
 
-export default List;
+export default Items;
