@@ -1,3 +1,17 @@
+function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+function getModel(path) {
+    // adding an extra '/' just in case it doesn't have one at the end 
+    path = path + '/'
+    const myRe = /\/(.*?)\/\s?/g;
+    const regexResult = myRe.exec(path);
+    let model = regexResult[1]
+    model = model.slice(0,-1);
+    model = capitalize(model);
+    return model;
+}
+
 class Db {
     constructor() {
 
@@ -18,24 +32,18 @@ class Db {
 
     getAll(req, res) {
         console.log("getAll");
-        console.log("---------------------------------");
-        
         //eg. req.path = /items/
         console.log('req.path', ': ', req.path);
-        let modelName = req.path;
-        //removing / and s
-        modelName = modelName.slice(1, -2);
-        // capitalizing
-        modelName = modelName.charAt(0).toUpperCase() + modelName.slice(1)
+        const modelName = getModel(req.path);
         console.log('modelName', ': ', modelName);
-
         const Model = require(`./models/${modelName}`);
-
         Model.find({})
             .then(doc => res.json(doc));
     }
 
     getOne(req, res) {
+        console.log("getOne");
+
         //eg. req.path = /items/
         console.log('req.path', ': ', req.path);
         let modelName = req.path;

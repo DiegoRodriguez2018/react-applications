@@ -28,6 +28,7 @@ app.delete('/items/:id', Db.deleteOne);
 
 
 app.get('/users', Db.getAll);
+app.get('/users/:id', Db.getOne);
 
 
 
