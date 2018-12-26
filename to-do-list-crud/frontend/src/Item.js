@@ -8,16 +8,16 @@ const regularRequest = axios.create({
 
 
 class List extends Component {
+    modelPath = '/items/'
+    
     state = {
         item: null,
         input: null
     }
 
     getItem = () => {
-        console.log("getItem triggered");
         const { id } = this.props.match.params;
-
-        regularRequest.get(`/list/${id}`)
+        regularRequest.get(`${this.modelPath}${id}`)
             .then(response => {
                 console.log('response.data', ': ', response.data);
                 const item = response.data[0]
@@ -47,18 +47,6 @@ class List extends Component {
 
     }
 
-    // handleUpdate(e) {
-    //     // e.preventDefault();
-
-    //     regularRequest.put(`/list/${id}`, {
-    //         item: this.state.input
-    //     })
-    //         .then(resp => console.log(resp.data))
-    //         .catch(error => {
-    //             console.log(error);
-    //         });
-    // }
-
     render() {
         const { item } = this.state
         if (item) {
@@ -82,7 +70,6 @@ class List extends Component {
                 </div>
             );
         }
-
     }
 }
 

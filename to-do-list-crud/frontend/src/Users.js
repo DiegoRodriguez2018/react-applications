@@ -7,8 +7,8 @@ const regularRequest = axios.create({
 });
 
 
-class Items extends Component {
-    modelPath = '/items/'
+class Users extends Component {
+    modelPath = '/users/'
 
     state = {
         items: [],
@@ -70,19 +70,12 @@ class Items extends Component {
     render() {
         return (
             <div>
-                <form className="input-area">
-                    <label htmlFor="input-box"> Enter your item: </label>
-                    <input type="text" id="input-box" onChange={this.handleInputUpdate.bind(this)}></input>
-                    <button onClick={this.handlePost.bind(this)}> Add Item </button>
-                    ||
-            <button onClick={this.deleteAll.bind(this)}> Delete All </button>
-                </form>
-
+ 
                 <form className="to-do-list">
                     <table>
                         <thead>
                             <tr>
-                                <th>To Do List</th>
+                                <th> Users </th> 
                                 <th> </th>
                             </tr>
                         </thead>
@@ -90,7 +83,7 @@ class Items extends Component {
                             return (
                                 <tbody key={index}>
                                     <tr>
-                                        <td>{doc.id}.{doc.item}</td>
+                                        <td>{doc.id}.{doc.username}</td>
                                         <td> <a href={this.modelPath+doc.id}> Update </a></td>
                                         <td><button id={doc.id} onClick={this.delete}> Delete </button></td>
                                     </tr>
@@ -104,4 +97,4 @@ class Items extends Component {
     }
 }
 
-export default Items;
+export default Users;

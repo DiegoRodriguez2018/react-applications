@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.get('/', Db.getAll);
+// app.get('/', ItemDb.getAll);
 
 app.get('/items', Db.getAll);
 
@@ -21,9 +21,19 @@ app.get('/items/:id', Db.getOne);
 
 app.post('/items', Db.post);
 
-app.delete('/items/deleteAll', Db.deleteAll);
+app.delete('/items', Db.deleteAll);
 
-app.delete('/items/delete/:id', Db.deleteOne);
+app.delete('/items/:id', Db.deleteOne);
+
+
+
+app.get('/users', Db.getAll);
+
+
+
+
+
+
 
 app.listen(3500, () => {
   console.log('listening on port 3500');
