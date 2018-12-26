@@ -43,19 +43,10 @@ class Db {
 
     getOne(req, res) {
         console.log("getOne");
-
-        //eg. req.path = /items/
+        //eg. req.path = /items/1
         console.log('req.path', ': ', req.path);
-        let modelName = req.path;
-        //removing / and s
-        modelName = modelName.slice(1, -3);
-        // capitalizing
-        modelName = modelName.charAt(0).toUpperCase() + modelName.slice(1)
-        console.log('modelName', ': ', modelName);
-
+        const modelName = getModel(req.path);
         const Model = require(`./models/${modelName}`);
-
-
         //find the item with the same id
         const { id } = req.params;
         Model.find({ id: parseInt(id) })
@@ -65,16 +56,8 @@ class Db {
     post(req, res) {
         //eg. req.path = /items/
         console.log('req.path', ': ', req.path);
-        let modelName = req.path;
-        //removing / and s
-        modelName = modelName.slice(1, -2);
-        // capitalizing
-        modelName = modelName.charAt(0).toUpperCase() + modelName.slice(1)
-        console.log('modelName', ': ', modelName);
-
+        const modelName = getModel(req.path);
         const Model = require(`./models/${modelName}`);
-
-
 
         Model.find().exec(function (err, results) {
             const count = results.length
@@ -95,13 +78,7 @@ class Db {
     deleteAll(req, res) {
         //eg. req.path = /items/
         console.log('req.path', ': ', req.path);
-        let modelName = req.path;
-        //removing / and s
-        modelName = modelName.slice(1, -2);
-        // capitalizing
-        modelName = modelName.charAt(0).toUpperCase() + modelName.slice(1)
-        console.log('modelName', ': ', modelName);
-
+        const modelName = getModel(req.path);
         const Model = require(`./models/${modelName}`);
 
 
@@ -118,16 +95,9 @@ class Db {
 
     deleteOne(req, res) {
         console.log("deleteOne");
-        
         //eg. req.path = /items/
         console.log('req.path', ': ', req.path);
-        let modelName = req.path;
-        //removing / and s
-        modelName = modelName.slice(1, -3);
-        // capitalizing
-        modelName = modelName.charAt(0).toUpperCase() + modelName.slice(1)
-        console.log('modelName', ': ', modelName);
-
+        const modelName = getModel(req.path);
         const Model = require(`./models/${modelName}`);
 
         //note req.params.id is a string
