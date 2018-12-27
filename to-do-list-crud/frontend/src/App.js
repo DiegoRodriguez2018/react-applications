@@ -5,6 +5,7 @@ import Items from './Items'
 import Item from './Item'
 
 import Users from './Users'
+import UsersSignUp from './UsersSignUp'
 
 
 
@@ -20,6 +21,8 @@ class App extends Component {
 
 
             <Route exact path="/users" component={Users} />
+            <Route exact path="/users/sign-up" component={UsersSignUp} />
+
 
           </div>
         </Router>
