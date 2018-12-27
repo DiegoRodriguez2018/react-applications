@@ -12,7 +12,7 @@ function getModel(path) {
     return model;
 }
 
-class Db {
+class MongooseHandler {
     constructor() {
 
     }
@@ -95,7 +95,7 @@ class Db {
 
     deleteOne(req, res) {
         console.log("deleteOne");
-        //eg. req.path = /items/
+        //eg. req.path = /items/1
         console.log('req.path', ': ', req.path);
         const modelName = getModel(req.path);
         const Model = require(`./models/${modelName}`);
@@ -118,4 +118,4 @@ class Db {
 
 
 
-module.exports = Db;
+module.exports = MongooseHandler;

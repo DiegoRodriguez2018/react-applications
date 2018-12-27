@@ -1,39 +1,30 @@
 // const Joi = require('joi');
-const express = require('express');
 const cors = require('cors');
-const DbHandler = require('./Db')
-
-//         new DbHandler(<ModelName>)
-const Db = new DbHandler('Item'); 
-//setup() will configure mongoose 
-Db.setup();
 
 // Setting up express.js
+const express = require('express');
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-// app.get('/', ItemDb.getAll);
+//Setting up MongooseHandler
+const MongooseHandler = require('./MongooseHandler')
+const Db = new MongooseHandler(); 
+//setup() will configure mongoose 
+Db.setup();
 
-app.get('/items', Db.getAll);
+const ResourcesGenerator = require ('./ResourcesGenerator');
+// ResourcesGenerator, generates get, post, put and delete routes for the specified routeName. eg:
+// app.get('/items', Db.getAll);
+// app.delete('/items/:id', Db.deleteOne);
 
-app.get('/items/:id', Db.getOne);
+//ResourcesGenerator requires a routeName, which has to correspond to a mongoose model. 
+const itemsResources = new ResourcesGenerator('items');
+// Note that generate also requires app as an argument. 
+itemsResources.generate(app);
 
-app.post('/items', Db.post);
-
-app.delete('/items', Db.deleteAll);
-
-app.delete('/items/:id', Db.deleteOne);
-
-
-
-app.get('/users', Db.getAll);
-app.get('/users/:id', Db.getOne);
-
-
-
-
-
+const usersResources = new ResourcesGenerator('users');
+usersResources.generate(app);
 
 
 app.listen(3500, () => {
