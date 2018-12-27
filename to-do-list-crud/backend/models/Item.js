@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const itemSchema = new mongoose.Schema({
   id: Number,
   item: String
-}, {collection: 'item'});
+}, {collection: 'items'});
 
 module.exports = mongoose.model('Item', itemSchema);
 
