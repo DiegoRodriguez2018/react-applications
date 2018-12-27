@@ -9,9 +9,8 @@ app.use(cors());
 
 //Setting up MongooseHandler
 const MongooseHandler = require('./MongooseHandler')
-const Db = new MongooseHandler(); 
-//setup() will configure mongoose 
-Db.setup();
+// setup is a MongooseHandler static method and takes databaseName as an argument
+MongooseHandler.setup('toDoList');
 
 const ResourcesGenerator = require ('./ResourcesGenerator');
 // ResourcesGenerator, generates get, post, put and delete routes for the specified routeName. eg:

@@ -16,13 +16,13 @@ class MongooseHandler {
     constructor() {
 
     }
-
-    setup() {
+    static setup(databaseName) {
         const mongoose = require('mongoose');
         //configuring mongoose 
-        mongoose.connect('mongodb://localhost:27017/toDoList');
+        mongoose.connect(`mongodb://localhost:27017/${databaseName}`);
         mongoose.connection.on('connected', () => {
             console.log('connected to mongod');
+            console.log(`Database Name: ${databaseName}`);
             console.log('-------------------------------');
         });
         mongoose.connection.on('error', () => {
