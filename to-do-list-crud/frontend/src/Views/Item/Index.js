@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import axios from 'axios';
 
 const regularRequest = axios.create({
@@ -7,12 +6,14 @@ const regularRequest = axios.create({
 });
 
 
-class Users extends Component {
-    modelPath = '/users/'
+class Index extends Component {
+    //this refers to the api path
+    modelPath = '/items/'
 
     state = {
         items: [],
-        input: null
+        input: null,
+        keys: []
     }
 
     getItems = () => {
@@ -22,8 +23,13 @@ class Users extends Component {
                 return response.json()
             })
             .then(items => {
-                console.log('items',': ', items);
-                this.setState({ items: items })
+                console.log('items', ': ', items);
+                this.setState({ items: items });
+
+                const keys = Object.keys(items[0]);
+                console.log('keys', ': ', keys);
+                this.setState({ keys: keys });
+
             })
     }
 
@@ -68,23 +74,35 @@ class Users extends Component {
     }
 
     render() {
+        const { items } = this.state;
+        const { keys } = this.state;
+
         return (
             <div>
- 
-                <form className="to-do-list">
+
+                <form className="index-table">
                     <table>
                         <thead>
                             <tr>
-                                <th> Users </th> 
-                                <th> </th>
+                                {keys.map(key => {
+                                    return <th>{key}</th>
+                                })}
+                                <th> Update </th>
+                                <th> Delete </th>
                             </tr>
                         </thead>
-                        {this.state.items.map((doc, index) => {
+                        {items.map((doc, index) => {
                             return (
                                 <tbody key={index}>
+                                {/* note that key above refers to the html tag, and keys bellow refers to the model fields. */}
                                     <tr>
-                                        <td>{doc.id}.{doc.username}</td>
-                                        <td> <a href={this.modelPath+doc.id}> Update </a></td>
+                                        {keys.map(key => {
+                                            return <td>{doc[key]}</td>
+                                        })}
+
+                                        <td> <a href={this.modelPath + doc.id}> 
+                                        Update </a></td>
+                                        
                                         <td><button id={doc.id} onClick={this.delete}> Delete </button></td>
                                     </tr>
                                 </tbody>
@@ -97,4 +115,4 @@ class Users extends Component {
     }
 }
 
-export default Users;
+export default Index;

@@ -42,24 +42,30 @@ for (let index = 1; index <= 10; index++) {
 // }, {collection: 'users'});
 
 const User = require('./models/User');
+
+
 User.deleteMany({}, err => {
     if (err) {
         console.log(err)
     } else {
         console.log("User collection restarted.")
+
+        const user1 = {
+            id: 1,
+            username: "user1",
+            password: "password1"
+          }
+          
+
+        User.create(user1, ()=> {
+            console.log("Seeding was successful.");
+            mongoose.disconnect()
+        } );
+        
+
     }
 })
 
-// const user1 = {
-//   id: 1,
-//   username: "user1",
-//   password: "password1"
-// }
 
-User.create({
-  id: 1,
-  username: "user1",
-  password: "password1"
-}, ()=> mongoose.disconnect());
 
 
