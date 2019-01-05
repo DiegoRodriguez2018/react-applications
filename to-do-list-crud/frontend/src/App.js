@@ -24,36 +24,51 @@ import PagesWelcome from './Views/Pages/Welcome'
 
 class App extends Component {
   render() {
-    if (typeof CommentsEdit !== undefined){
+    if (typeof CommentsEdit !== undefined) {
       console.log("yep");
       return (
         <div>
+          <nav>
+            <ul>
+              <li>
+                <a href="/">Home</a>
+              </li>
+
+              <li>
+                <a href="/users-sign-up">SingUp</a>
+              </li>
+            </ul>
+
+          </nav>
+
+
+          <hr></hr>
           <Router>
             <div>
               <Route exact path="/" component={PagesWelcome} />
-  
+
               <Route exact path="/items" component={ItemsIndex} />
               <Route exact path="/items/:id" component={ItemsShow} />
               <Route exact path="/items-new" component={ItemsNew} />
               <Route exact path="/items-edit" component={ItemsEdit} />
-  
+
               <Route exact path="/users" component={UsersIndex} />
               <Route exact path="/users/:id" component={UsersShow} />
               <Route exact path="/users-sign-up" component={UsersNew} />
               <Route exact path="/users-edit" component={UsersEdit} />
-              
+
               <Route exact path="/comments" component={CommentsIndex} />
               <Route exact path="/comments/:id" component={CommentsShow} />
               <Route exact path="/comments-sign-up" component={CommentsNew} />
               <Route exact path="/comments-edit" component={CommentsEdit} />
-  
+
             </div>
           </Router>
         </div>
       );
-    }else{
+    } else {
 
-      return(<p>Loading...</p>);
+      return (<p>Loading...</p>);
     }
 
   }
