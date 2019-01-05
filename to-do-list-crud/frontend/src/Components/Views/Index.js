@@ -26,17 +26,18 @@ class Index extends Component {
                 console.log('items', ': ', items);
                 this.setState({ items: items });
 
-                const keys = Object.keys(items[0]);
-                console.log('keys', ': ', keys);
-                this.setState({ keys: keys });
+                //Only extracting keys if the array is not empty, otherwise there will be an uncaught error.  
+                if (items.length > 0) {
+                    const keys = Object.keys(items[0]);
+                    console.log('keys', ': ', keys);
+                    this.setState({ keys: keys });
+                }
 
             })
     }
 
     componentDidMount() {
         this.getItems()
-        console.log("yeah");
-        console.log('this.props', ': ', this.props);
     }
 
     handleInputUpdate(e) {
@@ -69,7 +70,14 @@ class Index extends Component {
         const { id } = event.target;
 
         regularRequest.delete(`${this.modelPath}${id}`)
-            .then(resp => console.log(resp.data))
+            .then(
+                resp => {
+                    //api response
+                    console.log(resp.data)
+                    // updating this.state.items if successful.
+                    this.getItems()
+                }
+            )
             .catch(error => {
                 console.log(error);
             });
@@ -87,40 +95,48 @@ class Index extends Component {
         })
 
         return (
-            <div>
-                <form className="index-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                {keys.map(key => {
-                                    return <th>{key}</th>
+            <React.Fragment>
+                <div className="content">
+                <table>
+                    <thead>
+                        <tr>
+                            {keys.map(key => {
+                                return <th>{key}</th>
 
-                                })}
-                                <th> Update </th>
-                                <th> Delete </th>
-                            </tr>
-                        </thead>
-                        {items.map((doc, index) => {
-                            return (
-                                <tbody key={index}>
-                                    {/* note that key above refers to the html tag, and keys bellow refers to the model fields. */}
-                                    <tr>
-                                        {keys.map(key => {
-                                            return <td>{doc[key]}</td>
-                                        })}
+                            })}
+                            <th> Update </th>
+                            <th> Delete </th>
+                        </tr>
+                    </thead>
+                    {items.map((doc, index) => {
+                        return (
+                            <tbody key={index}>
+                                {/* note that key above refers to the html tag, and keys bellow refers to the model fields. */}
+                                <tr>
+                                    {keys.map(key => {
+                                        return <td>{doc[key]}</td>
+                                    })}
 
-                                        <td> <a href={this.modelPath + doc.id}>
-                                            Update </a></td>
+                                    <td> <a className="update-button" href={this.modelPath + doc.id}>
+                                        Update </a></td>
 
-                                        <td><button id={doc.id} onClick={this.delete}> Delete </button></td>
-                                    </tr>
-                                </tbody>
-                            )
-                        })}
-                    </table>
-                </form>
-            </div>
+                                    <td><a className="delete-button" href="#" id={doc.id} onClick={this.delete}> Delete </a></td>
+                                </tr>
+                                <tr> 
+
+                                </tr>
+                            </tbody>
+                        )
+                    })}
+                </table>
+                </div>
+                <a className="new-button" href={this.modelPath.slice(0,-1)+'-new'}>New</a>
+                
+
+            </React.Fragment>
         );
+
+
     }
 }
 

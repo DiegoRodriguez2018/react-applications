@@ -17,19 +17,18 @@ body {
 .App-link {
   color: #61dafb; }
 
-table {
-  border: 1px solid grey;
-  min-width: 400px; }
-
 .input-area {
   display: flex;
   justify-content: center;
   padding: 20px;
   padding-bottom: 40px; }
 
-.index-table {
+.content {
   display: flex;
   justify-content: center; }
+  .content table {
+    border: 1px solid dodgerblue;
+    min-width: 400px; }
 
 nav ul a {
   color: #f2f2f2;
@@ -49,5 +48,37 @@ nav ul a {
   background: #f2f2f2;
   color: dodgerblue;
   border: 1px solid dodgerblue; }
+
+.update-button {
+  color: #f2f2f2;
+  background: dodgerblue;
+  margin: 5px;
+  text-decoration: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: #f2f2f2;
+  color: dodgerblue;
+  border: 1px solid dodgerblue; }
+
+.delete-button {
+  color: #f2f2f2;
+  background: dodgerblue;
+  margin: 5px;
+  text-decoration: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: #ff3333; }
+
+.new-button {
+  color: #f2f2f2;
+  background: dodgerblue;
+  margin: 5px;
+  text-decoration: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: #f2f2f2;
+  color: dodgerblue;
+  border: 1px solid dodgerblue;
+  padding: 15px; }
 
 /*# sourceMappingURL=App.css.map */
