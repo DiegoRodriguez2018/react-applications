@@ -3,6 +3,7 @@ import './Stylesheets/App.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import HomePage from './Components/HomePage'
+import NavBar from './Components/NavBar'
 
 //Views: Index, Show, New, Edit
 import Index from './Components/Views/Index'
@@ -34,14 +35,8 @@ class App extends Component {
     if (typeof CommentsEdit !== undefined) {
       return (
         <React.Fragment>
-          <nav>
-            <ul>
-              <a href="/">Home</a>
-              <a href="/users-new">Sing Up</a>
-            </ul>
-          </nav>
-          <hr></hr>
 
+          <NavBar/>
 
           <Router>
             <React.Fragment>
