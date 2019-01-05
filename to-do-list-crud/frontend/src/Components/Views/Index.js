@@ -36,9 +36,7 @@ class Index extends Component {
     componentDidMount() {
         this.getItems()
         console.log("yeah");
-        
-        console.log('this.props',': ', this.props);
-        
+        console.log('this.props', ': ', this.props);
     }
 
     handleInputUpdate(e) {
@@ -81,15 +79,22 @@ class Index extends Component {
         const { items } = this.state;
         const { keys } = this.state;
 
+        // Removing undesired attributes from keys array:
+        const itemsToIgnore = ['_id', '__v'];
+        itemsToIgnore.map(item => {
+            const index = keys.indexOf(item);
+            keys.splice(index, 1);
+        })
+
         return (
             <div>
-
                 <form className="index-table">
                     <table>
                         <thead>
                             <tr>
                                 {keys.map(key => {
                                     return <th>{key}</th>
+
                                 })}
                                 <th> Update </th>
                                 <th> Delete </th>
@@ -98,15 +103,15 @@ class Index extends Component {
                         {items.map((doc, index) => {
                             return (
                                 <tbody key={index}>
-                                {/* note that key above refers to the html tag, and keys bellow refers to the model fields. */}
+                                    {/* note that key above refers to the html tag, and keys bellow refers to the model fields. */}
                                     <tr>
                                         {keys.map(key => {
                                             return <td>{doc[key]}</td>
                                         })}
 
-                                        <td> <a href={this.modelPath + doc.id}> 
-                                        Update </a></td>
-                                        
+                                        <td> <a href={this.modelPath + doc.id}>
+                                            Update </a></td>
+
                                         <td><button id={doc.id} onClick={this.delete}> Delete </button></td>
                                     </tr>
                                 </tbody>
