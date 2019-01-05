@@ -1,40 +1,23 @@
-.App {
-  text-align: center;
-}
+/*
+Errno::ENOENT: No such file or directory @ rb_sysopen - App.scss
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-table {
-  border: 1px solid grey;
-  min-width: 400px;
-}
-
-.input-area{
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  padding-bottom: 40px;
-}
-
-.index-table{
-  display: flex;
-  justify-content: center;
-}
+Backtrace:
+/home/diego/.rvm/gems/ruby-2.5.1/gems/sass-3.7.2/lib/sass/plugin/compiler.rb:454:in `read'
+/home/diego/.rvm/gems/ruby-2.5.1/gems/sass-3.7.2/lib/sass/plugin/compiler.rb:454:in `update_stylesheet'
+/home/diego/.rvm/gems/ruby-2.5.1/gems/sass-3.7.2/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/home/diego/.rvm/gems/ruby-2.5.1/gems/sass-3.7.2/lib/sass/plugin/compiler.rb:209:in `each'
+/home/diego/.rvm/gems/ruby-2.5.1/gems/sass-3.7.2/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/home/diego/.rvm/gems/ruby-2.5.1/gems/sass-3.7.2/lib/sass/plugin/compiler.rb:294:in `watch'
+/home/diego/.rvm/gems/ruby-2.5.1/gems/sass-3.7.2/lib/sass/plugin.rb:109:in `method_missing'
+/home/diego/.rvm/gems/ruby-2.5.1/gems/sass-3.7.2/lib/sass/exec/sass_scss.rb:358:in `watch_or_update'
+/home/diego/.rvm/gems/ruby-2.5.1/gems/sass-3.7.2/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/home/diego/.rvm/gems/ruby-2.5.1/gems/sass-3.7.2/lib/sass/exec/base.rb:50:in `parse'
+/home/diego/.rvm/gems/ruby-2.5.1/gems/sass-3.7.2/lib/sass/exec/base.rb:18:in `parse!'
+/home/diego/.rvm/gems/ruby-2.5.1/gems/sass-3.7.2/bin/sass:13:in `<top (required)>'
+/home/diego/.rbenv/versions/2.4.1/bin/sass:22:in `load'
+/home/diego/.rbenv/versions/2.4.1/bin/sass:22:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Errno::ENOENT: No such file or directory @ rb_sysopen - App.scss"; }

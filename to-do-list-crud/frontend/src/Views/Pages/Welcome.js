@@ -17,9 +17,9 @@ class PagesWelcome extends Component {
         return (
             <div>
                 <h1>Welcome.</h1>
-                <ul>
+                <ul className="pages-links">
                         {pages.map(page => {
-                           return( <li><a href={page.path}> {page.label}</a></li> );
+                           return( <a href={page.path}> {page.label}</a> );
                         })}
                 </ul>
             </div>

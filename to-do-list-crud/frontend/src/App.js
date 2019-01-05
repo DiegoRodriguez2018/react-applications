@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './stylesheets/App.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import ItemsIndex from './Views/Item/Index'
@@ -30,15 +30,9 @@ class App extends Component {
         <div>
           <nav>
             <ul>
-              <li>
                 <a href="/">Home</a>
-              </li>
-
-              <li>
-                <a href="/users-sign-up">SingUp</a>
-              </li>
+                <a href="/users-sign-up">Sing Up</a>
             </ul>
-
           </nav>
 
 
