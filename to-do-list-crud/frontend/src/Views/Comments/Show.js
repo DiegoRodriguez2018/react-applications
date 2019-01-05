@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import axios from 'axios';
 
 const regularRequest = axios.create({
@@ -7,9 +6,10 @@ const regularRequest = axios.create({
 });
 
 
-class List extends Component {
-    modelPath = '/items/'
-    
+class Show extends Component {
+    //this refers to the api path
+    modelPath = '/comments/'
+
     state = {
         item: null,
         input: null
@@ -50,19 +50,12 @@ class List extends Component {
     render() {
         const { item } = this.state
         if (item) {
-            return (
-                <div>
-                    <h1> Item </h1>
-                    <p>Current Description: {this.state.item.item}</p>
-
-                    <form className="input-area">
-                        <label htmlFor="input-box"> Update Description: </label>
-                        <input type="text" id="input-box" onChange={this.handleInputUpdate.bind(this)}></input>
-                        {/* <button onClick={this.handleUpdate.bind(this)}> Update </button> */}
-                    </form>
-
-                </div>
-            );
+            
+            return(
+                Object.keys(item).map(key=>{
+                    return <p> {key} : {item[key]}  </p>
+                })
+            )
         } else {
             return (
                 <div>
@@ -73,4 +66,4 @@ class List extends Component {
     }
 }
 
-export default List;
+export default Show;

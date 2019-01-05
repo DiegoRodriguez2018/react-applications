@@ -68,4 +68,26 @@ User.deleteMany({}, err => {
 
 
 
+const Comment = require('./models/Comment');
 
+
+Comment.deleteMany({}, err => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log("Comment collection restarted.")
+
+        const comment1 = {
+            id: 1,
+            content: "comment 1"
+          }
+          
+
+        Comment.create(comment1, ()=> {
+            console.log("Seeding was successful.");
+            mongoose.disconnect()
+        } );
+        
+
+    }
+})

@@ -18,6 +18,8 @@ const ResourcesGenerator = require ('./ResourcesGenerator');
 // app.get('/items', Db.getAll);
 // app.delete('/items/:id', Db.deleteOne);
 
+//TODO: refractor by creating a static method in the ResourcesGenerator class.
+
 //ResourcesGenerator requires a routeName, which has to correspond to a mongoose model. 
 const itemsResources = new ResourcesGenerator('items');
 // Note that generate also requires app as an argument. 
@@ -25,6 +27,9 @@ itemsResources.generate(app);
 
 const usersResources = new ResourcesGenerator('users');
 usersResources.generate(app);
+
+const commentResources = new ResourcesGenerator('comments');
+commentResources.generate(app);
 
 
 app.listen(3500, () => {

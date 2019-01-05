@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import axios from 'axios';
 
 const regularRequest = axios.create({
@@ -7,12 +6,14 @@ const regularRequest = axios.create({
 });
 
 
-class Items extends Component {
-    modelPath = '/items/'
+class Index extends Component {
+    //this refers to the api path
+    modelPath = '/comments/'
 
     state = {
         items: [],
-        input: null
+        input: null,
+        keys: []
     }
 
     getItems = () => {
@@ -22,8 +23,13 @@ class Items extends Component {
                 return response.json()
             })
             .then(items => {
-                console.log('items',': ', items);
-                this.setState({ items: items })
+                console.log('items', ': ', items);
+                this.setState({ items: items });
+
+                const keys = Object.keys(items[0]);
+                console.log('keys', ': ', keys);
+                this.setState({ keys: keys });
+
             })
     }
 
@@ -68,30 +74,35 @@ class Items extends Component {
     }
 
     render() {
+        const { items } = this.state;
+        const { keys } = this.state;
+
         return (
             <div>
-                <form className="input-area">
-                    <label htmlFor="input-box"> Enter your item: </label>
-                    <input type="text" id="input-box" onChange={this.handleInputUpdate.bind(this)}></input>
-                    <button onClick={this.handlePost.bind(this)}> Add Item </button>
-                    ||
-            <button onClick={this.deleteAll.bind(this)}> Delete All </button>
-                </form>
 
-                <form className="to-do-list">
+                <form className="index-table">
                     <table>
                         <thead>
                             <tr>
-                                <th>To Do List</th>
-                                <th> </th>
+                                {keys.map(key => {
+                                    return <th>{key}</th>
+                                })}
+                                <th> Update </th>
+                                <th> Delete </th>
                             </tr>
                         </thead>
-                        {this.state.items.map((doc, index) => {
+                        {items.map((doc, index) => {
                             return (
                                 <tbody key={index}>
+                                {/* note that key above refers to the html tag, and keys bellow refers to the model fields. */}
                                     <tr>
-                                        <td>{doc.id}.{doc.item}</td>
-                                        <td> <a href={this.modelPath+doc.id}> Update </a></td>
+                                        {keys.map(key => {
+                                            return <td>{doc[key]}</td>
+                                        })}
+
+                                        <td> <a href={this.modelPath + doc.id}> 
+                                        Update </a></td>
+                                        
                                         <td><button id={doc.id} onClick={this.delete}> Delete </button></td>
                                     </tr>
                                 </tbody>
@@ -104,4 +115,4 @@ class Items extends Component {
     }
 }
 
-export default Items;
+export default Index;
