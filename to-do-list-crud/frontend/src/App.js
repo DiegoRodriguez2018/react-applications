@@ -17,14 +17,12 @@ import CommentsShow from './Views/Comments/Show'
 import CommentsNew from './Views/Comments/New'
 import CommentsEdit from './Views/Comments/Edit'
 
+import PagesWelcome from './Views/Pages/Welcome'
+
+
 //Views: index, show, new, edit
 
 class App extends Component {
-  componentDidMount() {
-    console.log("app did mount")
-    // eval ('import CommentsEdit from \'./Views/Comments/Edit\'');      
-
-  }
   render() {
     if (typeof CommentsEdit !== undefined){
       console.log("yep");
@@ -32,10 +30,7 @@ class App extends Component {
         <div>
           <Router>
             <div>
-              {/* 
-              <Route exact path="/" component={Items} />
-              <Route exact path="/items" component={Items} />
-              <Route exact path="/items/:id" component={Item} /> */}
+              <Route exact path="/" component={PagesWelcome} />
   
               <Route exact path="/items" component={ItemsIndex} />
               <Route exact path="/items/:id" component={ItemsShow} />
