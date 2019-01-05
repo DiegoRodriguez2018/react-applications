@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class PagesWelcome extends Component {
+class HomePage extends Component {
 
     state = {
 
@@ -27,4 +27,4 @@ class PagesWelcome extends Component {
     }
 }
 
-export default PagesWelcome;
+export default HomePage;

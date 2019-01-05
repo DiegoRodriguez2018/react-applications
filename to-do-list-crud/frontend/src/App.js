@@ -1,64 +1,60 @@
 import React, { Component } from 'react';
-import './stylesheets/App.css';
+import './Stylesheets/App.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import ItemsIndex from './Views/Item/Index'
-import ItemsShow from './Views/Item/Show'
-import ItemsNew from './Views/Item/New'
-import ItemsEdit from './Views/Item/Edit'
+import HomePage from './Components/HomePage'
 
-import UsersIndex from './Views/User/Index'
-import UsersShow from './Views/User/Show'
-import UsersNew from './Views/User/New'
-import UsersEdit from './Views/User/Edit'
+//Views: Index, Show, New, Edit
+import Index from './Components/Views/Index'
+import Show from './Components/Views/Show'
+import Edit from './Components/Views/Edit'
+import New from './Components/Views/New'
 
-import CommentsIndex from './Views/Comments/Index'
-import CommentsShow from './Views/Comments/Show'
-import CommentsNew from './Views/Comments/New'
-import CommentsEdit from './Views/Comments/Edit'
-
-import PagesWelcome from './Views/Pages/Welcome'
-
-
-//Views: index, show, new, edit
 
 class App extends Component {
+
+  createRoutes(modelName) {
+    return (
+      <React.Fragment>
+        <Route exact path={`/${modelName}`}
+          render={(props) => <Index modelPath={`/${modelName}/`} {...props} />} />
+
+        <Route exact path={`/${modelName}/:id`}
+          render={(props) => <Show modelPath={`/${modelName}/`} {...props} />} />
+
+        <Route exact path={`/${modelName}-new`}
+          render={(props) => <New modelPath={`/${modelName}/`} {...props} />} />
+
+        <Route exact path={`/${modelName}-edit`}
+          render={(props) => <Edit modelPath={`/${modelName}/`} {...props} />} />
+      </React.Fragment>
+    )
+  }
   render() {
     if (typeof CommentsEdit !== undefined) {
-      console.log("yep");
       return (
-        <div>
+        <React.Fragment>
           <nav>
             <ul>
-                <a href="/">Home</a>
-                <a href="/users-sign-up">Sing Up</a>
+              <a href="/">Home</a>
+              <a href="/users-new">Sing Up</a>
             </ul>
           </nav>
-
-
           <hr></hr>
+
+
           <Router>
-            <div>
-              <Route exact path="/" component={PagesWelcome} />
-
-              <Route exact path="/items" component={ItemsIndex} />
-              <Route exact path="/items/:id" component={ItemsShow} />
-              <Route exact path="/items-new" component={ItemsNew} />
-              <Route exact path="/items-edit" component={ItemsEdit} />
-
-              <Route exact path="/users" component={UsersIndex} />
-              <Route exact path="/users/:id" component={UsersShow} />
-              <Route exact path="/users-sign-up" component={UsersNew} />
-              <Route exact path="/users-edit" component={UsersEdit} />
-
-              <Route exact path="/comments" component={CommentsIndex} />
-              <Route exact path="/comments/:id" component={CommentsShow} />
-              <Route exact path="/comments-sign-up" component={CommentsNew} />
-              <Route exact path="/comments-edit" component={CommentsEdit} />
-
-            </div>
+            <React.Fragment>
+              <Route exact path="/" component={HomePage} />
+              {/* Note that we are using spread attributes {...props} to pass not only modelPath but all the other hidden props */}
+              {this.createRoutes('items')}
+              {this.createRoutes('users')}
+              {this.createRoutes('comments')}
+            </React.Fragment>
           </Router>
-        </div>
+
+        </React.Fragment>
+       
       );
     } else {
 

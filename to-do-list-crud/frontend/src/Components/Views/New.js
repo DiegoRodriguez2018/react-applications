@@ -7,11 +7,12 @@ const regularRequest = axios.create({
 
 class New extends Component {
      //this refers to the api path
+    modelPath = this.props.modelPath;
 
     render() {
         return(
 
-            <h1>New comments page</h1>
+            <h1>New {this.modelPath} page</h1>
         )
     }
 }

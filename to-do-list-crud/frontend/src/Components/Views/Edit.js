@@ -7,11 +7,12 @@ const regularRequest = axios.create({
 
 class Edit extends Component {
      //this refers to the api path
+    modelPath = this.props.modelPath;
 
     render() {
         return(
 
-            <h1>Edit element page</h1>
+            <h1>Edit {this.modelPath} page</h1>
         )
     }
 }

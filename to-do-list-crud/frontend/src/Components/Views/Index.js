@@ -8,7 +8,7 @@ const regularRequest = axios.create({
 
 class Index extends Component {
     //this refers to the api path
-    modelPath = '/users/'
+    modelPath = this.props.modelPath;
 
     state = {
         items: [],
@@ -35,6 +35,10 @@ class Index extends Component {
 
     componentDidMount() {
         this.getItems()
+        console.log("yeah");
+        
+        console.log('this.props',': ', this.props);
+        
     }
 
     handleInputUpdate(e) {
