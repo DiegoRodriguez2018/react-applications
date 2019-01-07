@@ -1,0 +1,22 @@
+.green{
+  color:rgb(79, 165, 52);
+}
+
+.red{
+  color:rgb(226, 23, 23);
+}
+
+.black{
+  color:rgb(17, 16, 16);
+}
+
+.scrollBox {
+  display: relative;
+  margin: 10px;
+  padding: 10px;
+
+  height:80vh;
+  width:150px;
+  border:1px solid #ccc;
+  overflow:auto;
+}
