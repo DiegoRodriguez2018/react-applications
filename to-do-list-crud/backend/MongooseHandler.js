@@ -7,7 +7,7 @@ function getModel(path) {
     const myRe = /\/(.*?)\/\s?/g;
     const regexResult = myRe.exec(path);
     let model = regexResult[1]
-    model = model.slice(0,-1);
+    model = model.slice(0, -1);
     model = capitalize(model);
     return model;
 }
@@ -113,7 +113,6 @@ class MongooseHandler {
         );
         return res.send({ message: "Delete one request received" });
     }
-
 }
 
 
