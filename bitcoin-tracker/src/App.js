@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
-import {View} from 'react-native';
-
 import './App.css';
-import Graph from 'react-native-line-plot';
-
-
 
 class App extends Component {
   state = {
     info: [],
+    currencies : ""
   }
   // info : [{price: , color: }]
-
 
   connect() {
     this.url = 'wss://stream.binance.com:9443/ws/btcusdt@miniTicker'
@@ -24,7 +19,9 @@ class App extends Component {
     this.ws.onmessage = message => {
       // console.log('message',': ', message);
       const data = JSON.parse(message.data);
-      // console.log('data',': ', data);
+      
+      this.state.currencies =  data.s;    
+
 
       const price = data.c;
       let color = "black";
@@ -81,29 +78,23 @@ class App extends Component {
     this.connect();
   }
 
+  toCurrency(num){
+    return `$${parseFloat(num).toFixed(2)}`
+  }
+
   render() {
     const info = this.state.info;
 
     return (
       <div className="App">
         <h1>Values:</h1>
-
+        <h2>{this.state.currencies}</h2>
         <div className="scrollBox">
 
           {info.map(value => {
             const { color, price } = value;
-            return <h3 className={color}> {price}</h3>
+            return <h3 className={color}> {this.toCurrency(price)}</h3>
           })}
-
-          <View style={styles.container}>
-            <Graph
-              data={[[0, 0], [33, 30], [66, 25], [99, 50]]}
-              graphColorPrimary='#000000'
-              graphColorSecondary='#FF0000'
-              xUnit='foo'
-              yUnit='bar'
-            />
-          </View>
         </div>
 
       </div>
