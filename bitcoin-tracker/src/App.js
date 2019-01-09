@@ -22,7 +22,6 @@ class App extends Component {
       
       this.state.currencies =  data.s;    
 
-
       const price = data.c;
       let color = "black";
 
@@ -34,18 +33,12 @@ class App extends Component {
       // console.log('color',': ', color);
       // console.log('currentValue',': ', currentValue);
 
-
       const temp = this.state.info;
       const previousValue = temp[temp.length - 1];
 
-
-
-
       if (previousValue) {
-
         // console.log('previousValue.price', ': ', previousValue.price);
         // console.log('currentValue.price',': ', currentValue.price);
-
         if (currentValue.price > previousValue.price) {
           currentValue.color = "green";
         } else if (currentValue.price < previousValue.price) {
@@ -56,11 +49,7 @@ class App extends Component {
 
       }
 
-
-
       temp.push(currentValue);
-
-
       this.setState({ info: temp });
 
       // console.log('this.state.info',': ', this.state.info);
@@ -68,11 +57,8 @@ class App extends Component {
       //Scrolling to the bottom of the scroll box. 
       const scrollBox = document.querySelector(".scrollBox");
       scrollBox.scrollTop = scrollBox.scrollHeight;
-
     }
-
   }
-
 
   componentDidMount() {
     this.connect();
