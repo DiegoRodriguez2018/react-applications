@@ -22,23 +22,17 @@ class Form extends Component {
       .then(resp => {
         const { token } = resp.data;
         console.log('token',': ', token);
-        
-
         //To store in local storage
         localStorage.setItem('token', token);
-
         this.setState({ message: 'Successful login.' })
-
-
         // after this step is a good moment to REROUTE to home page.
-      })
+        
+      }) 
       .catch(err => {
         //err.response will display more information about the error
         // for this to work we need to check if the data entered by the user exists in the database in our api, if not we send back an error. 
         console.log(err.response);
-
         const { status } = err.response;
-
         if (status === 403) {
           this.setState({ error: 'Incorrect username or password. Please try again.' })
         }
@@ -59,8 +53,10 @@ class Form extends Component {
           this.setState({ error: undefined })
         })
         .catch(err => {
-          console.log(err)
+          console.log(err.response)
+
           this.setState({ message: undefined })
+
           this.setState({ error: err.response })
         })
     } else {

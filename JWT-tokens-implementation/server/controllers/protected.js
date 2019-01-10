@@ -18,16 +18,16 @@ const isAuthenticated = (req,res, next) => {
 }
 
 //by doint this we are going to use isAuthenticated in all our routes defined in this file. 
-// router.use(isAuthenticated);
+router.use(isAuthenticated);
 
-router.post('/', isAuthenticated, (req,res) => {
+router.post('/', (req,res) => {
     const { username } = req.headers;
     return res.send(`Authenticated! Welcome ${username}`);
 
 })
 
 
-router.get('/', (req, res) => {
+router.get('/resources', (req, res) => {
     return res.send('You have accessed the protected resources');
 })
 
