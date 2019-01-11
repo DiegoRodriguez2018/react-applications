@@ -1,0 +1,72 @@
+@import './Colors';
+
+body{
+  background: $background-color;
+}
+
+.App {
+  text-align: center;
+}
+
+// .App-header {
+//   background-color: #282c34;
+//   min-height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   font-size: calc(10px + 2vmin);
+//   color: white;
+// }
+
+// .App-link {
+//   color: #61dafb;
+// }
+
+// .input-area{
+//   display: flex;
+//   justify-content: center;
+//   padding: 20px;
+//   padding-bottom: 40px;
+// }
+
+
+// //Table
+// .content{
+//   display: flex;
+//   justify-content: center;
+//   table {
+//     border: 1px solid $main-color;
+//     min-width: 400px;
+//   }
+// }
+
+@mixin buttonSolid(){
+    color:$light-color;
+    background: $main-color;
+    margin: 5px;
+    text-decoration: none;
+    padding: {
+      left: 20px;
+      right: 20px;
+    }
+}
+
+@mixin buttonHollow(){
+  @include buttonSolid();
+    background: $light-color;
+    color : $main-color;    
+    border:1px solid $main-color;
+}
+
+
+
+.navigation-links{
+  display: inline-block;
+  padding: 10px;
+  
+  a{
+    @include buttonHollow();
+  }
+  
+}

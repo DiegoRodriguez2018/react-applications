@@ -1,0 +1,21 @@
+body {
+  background: #fafafa; }
+
+.App {
+  text-align: center; }
+
+.navigation-links {
+  display: inline-block;
+  padding: 10px; }
+  .navigation-links a {
+    color: #f2f2f2;
+    background: #1060af;
+    margin: 5px;
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: #f2f2f2;
+    color: #1060af;
+    border: 1px solid #1060af; }
+
+/*# sourceMappingURL=App.css.map */

@@ -1,6 +1,9 @@
 const express = require('express');
 const cors = require ('cors');
 
+//clearing console
+console.clear();
+
 //configuring mongoose 
 const mongoose = require('mongoose');
 

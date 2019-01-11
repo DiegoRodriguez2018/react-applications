@@ -22,7 +22,7 @@ const generateToken = (user) => {
     const token = jwt.sign(
         {username: user.username},
         'coder-academy', 
-        {expiresIn: '1h'}
+        {expiresIn: '2m'}
     )
 
     return token;
