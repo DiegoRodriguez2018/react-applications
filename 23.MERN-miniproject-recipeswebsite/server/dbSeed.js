@@ -1,8 +1,8 @@
 console.clear();
-require('../db');
+require('./dbConfig');
 
-const Ingredient = require('../models/Ingredient');
-const Recipe = require('../models/Recipe');
+const Ingredient = require('./models/Ingredient');
+const Recipe = require('./models/Recipe');
 
 async function seedIngredients() {
     const ingredients = ["paprika", "tomato", "pasta", "beef", "salmon"];
@@ -10,7 +10,7 @@ async function seedIngredients() {
     for (let index = 0; index < ingredients.length; index++) {
         const element = ingredients[index];
         await Ingredient.create({ id: index + 1, name: element });
-        console.log('index', ': ', index);
+        console.log('Seeding: ', ': ', index + 1 );
     }
 
     p = new Promise((resolve, reject) => {

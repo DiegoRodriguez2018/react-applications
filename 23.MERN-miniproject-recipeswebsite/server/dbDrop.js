@@ -1,9 +1,9 @@
 require('dotenv').load();
 console.clear();
-require('../db');
+require('./dbConfig');
 
-const Ingredient = require('../models/Ingredient');
-const Recipe = require('../models/Recipe');
+const Ingredient = require('./models/Ingredient');
+const Recipe = require('./models/Recipe');
 
 async function emptyCollections() {
     await Recipe.deleteMany({}, () => {
