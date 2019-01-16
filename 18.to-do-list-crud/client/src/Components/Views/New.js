@@ -5,64 +5,48 @@ const regularRequest = axios.create({
     baseURL: 'http://localhost:3500/',
 });
 
-class New extends Component {
-    //this refers to the api path
+class NewEntryForm extends Component {
     modelPath = this.props.modelPath;
-
-    state = {
-        value: '',
-        items: [],
-        keys: []
+    // just starting an empty state object
+    state = {};
+    
+    componentDidMount(){
+      console.log('this.props',': ', this.props);
     }
-
-    // getItem = () => {
-    //     // const { id } = this.props.match.params;
-    //     const id = 1;
-    //     regularRequest.get(`${this.modelPath}${id}`)
-    //         .then(response => {
-    //             console.log('response.data', ': ', response.data);
-    //             const item = response.data[0]
-    //             return item
-    //         })
-    //         .then(item => {
-    //             console.log('item', ': ', item);
-    //             this.setState({ item })
-
-    //         })
-    //         .catch(error => console.log(error));
-    // }
-
-
-    // componentDidMount() {
-    //     this.getItem()
-    // }
-
-
-    handleChange(event) {
-        this.setState({ value: event.target.value });
+    
+    handleInputChange = (e) => {
+      const { value, id } = e.currentTarget;
+      this.setState({ [id]: value });
     }
-
-    handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.value);
-        event.preventDefault();
+   
+    submitForm = (e) => {
+      e.preventDefault();
+      // console.log('this.props.handleSubmit',': ', this.props.handleSubmit);
+      // console.log('this.state',': ', this.state);
+      const { username, password } = this.state;
+      this.props.handleSubmit(username, password);
+      // note we are calling the function passed in the props, but we are calling it with the data that is in this components state. 
+      // also note that we defined handleSubmit so it takes the same arguments.
     }
-
+   
     render() {
-        return (
-            <React.Fragment>
-                <h1>New {this.modelPath} page</h1>
-                <form onSubmit={this.handleSubmit}>
-                    <label> Name: </label>
-                  <input type="text" value={this.state.value} onChange={this.handleChange} />
-
-                    <input type="submit" value="Submit" />
-                </form>
-
-            </React.Fragment>
-
-
-        )
+      return (
+        <React.Fragment>
+          <form>
+            <label htmlFor="username"> Username: </label>
+            <input type="text" id="username" onChange={this.handleInputChange} />
+  
+            <label htmlFor="username"> Password: </label>
+            <input type="password" id="password" onChange={this.handleInputChange} />
+  
+            <button onClick={this.submitForm}>Send to API</button>
+          </form>
+  
+  
+  
+        </React.Fragment>
+      );
     }
-}
-
-export default New;
+  }
+  
+  export default NewEntryForm;
