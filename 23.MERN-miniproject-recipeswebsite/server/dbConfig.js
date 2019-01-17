@@ -2,8 +2,7 @@
 require('dotenv').load();
 const mongoose = require('mongoose');
 
-const driver = process.env.DB_PROD_DRIVER;
-console.log('driver',': ', driver);
+const driver = process.env.MONGO_DRIVER;
 
 mongoose.connect(driver);
 mongoose.connection.on('connected', () => {
