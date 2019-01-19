@@ -25,3 +25,5 @@ chrome-user-data
 
 .env
 now.json
+.env.production
+.env.development

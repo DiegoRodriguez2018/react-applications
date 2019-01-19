@@ -1,36 +1,39 @@
 const express = require('express');
 const router = new express.Router();
-const jwt = require('jsonwebtoken');
+const Ingredient = require('../models/Ingredient');
+const Recipe = require('../models/Recipe');
 
-//Note that headers are the best place to pass authentication info. 
-// Also is a good place to pass tokens
-
-//because we are implemnting tokens inn auth.js now we can just check for the token isAuthenticated:
-const isAuthenticated = (req,res, next) => {
-    const {token}  = req.headers;
-    //to validate a token we call the verify method:
-    const SECRET = 'coder-academy'; // note this is just for demonstration proposes, we need to store this in some kind of env variable. 
-    const decoded = jwt.verify(token, SECRET);
-    // jwt.verify will return a decoded version of the token with the data we sent in it. 
-
-    console.log(decoded);
+const isAuthenticated = (req, res, next) => {
+    console.log('req.user', ': ', req.user);
+    if (!req.user) {
+        return res.status(403).send('Not authorised, please login.')
+    }
     next();
 }
 
-//by doint this we are going to use isAuthenticated in all our routes defined in this file. 
-// router.use(isAuthenticated);
+router.use(isAuthenticated);
 
-router.post('/', isAuthenticated, (req,res) => {
+router.post('/', (req,res) => {
     const { username } = req.headers;
     return res.send(`Authenticated! Welcome ${username}`);
-
 })
-
 
 router.get('/', (req, res) => {
     return res.send('You have accessed the protected resources');
 })
 
+router.get('/ingredients', (req,res)=>{
+    Ingredient.find({}, (err,docs)=>{
+        return res.send(docs);
+    })
+});
 
+router.get('/recipes', (req,res)=>{
+    Recipe.find({}).
+    populate('ingredientsInRecipe').
+    exec((err,docs)=>{
+        return res.send(docs);
+    })
+});
 
 module.exports = router;

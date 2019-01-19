@@ -1,39 +1,44 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class Dashboard extends Component {
+class Form extends Component {
+    // just starting an empty state object
     state = {};
 
     handleProtectedRequest = (e) => {
         console.log('this.state', ': ', this.state);
-        const token = localStorage.getItem('token')
 
+        const token = localStorage.getItem('token')
         if (token) {
             console.log("token exists");
-
-            const url = 'http://localhost:3500/protected/dashboard'
+            
+            const baseURL =  process.env.REACT_APP_URL;
+            console.log('baseURL',': ', baseURL)
+            const url = `${baseURL}/protected/resources`
             //here we are sending the token to the server.
             const options = {
                 headers: { token }
             }
-        // const token = localStorage.getItem('token')
             axios.get(url, options)
                 .then(res => {
                     console.log('res', ': ', res);
-                    const {message} = res.data
-                    this.setState({ message })
+
+                    this.setState({ message: res.data })
+                    this.setState({ error: undefined })
                 })
                 .catch(error => {
                     //this error handling code is from the axios docs:
                     if (error.response) {
+
                         // The request was made and the server responded with a status code
                         // that falls out of the range of 2xx
-                        console.log("error.response: ", error.response);
-                        // console.log(error.response.status);
-                        // console.log(error.response.headers);
+                        console.log("data: ", error.response);
+                        console.log(error.response.status);
+                        console.log(error.response.headers);
 
-                        const { message } = error.response.data;
-                        this.setState({ message })
+                        const { data } = error.response;
+                        this.setState({ message: undefined })
+                        this.setState({ error: data.errorMessage })
                         //note that errorMessage comes from the api.
                     } else if (error.request) {
                         // The request was made but no response was received
@@ -50,21 +55,20 @@ class Dashboard extends Component {
             this.setState({ error: "token error" })
         }
     }
-
-    componentDidMount(){
-        this.handleProtectedRequest();
-    }
     render() {
-        const {message} = this.state;
+        const { error, message } = this.state;
 
         return (
             <React.Fragment>
-                {message && <h1> {message} </h1>}
-               
+
+                <button onClick={this.handleProtectedRequest}>Request protected resource.</button>
+
+                {message && <p> {message} </p>}
+                {error && <p> {error} </p>}
+
             </React.Fragment>
         );
-
-
     }
 }
-export default Dashboard;
+
+export default Form;

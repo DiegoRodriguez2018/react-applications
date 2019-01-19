@@ -11,19 +11,19 @@ class LogIn extends Component {
     //note we are getting the username and password from this.state coming from the Form, where input is being taken care of. 
     handleLogin = (username, password) => {
         console.log('submitting request');
+        const baseURL =  process.env.REACT_APP_URL;
+        console.log('baseURL',': ', baseURL)
 
-        const url = 'http://localhost:3500/auth/login';
+        const url = `${baseURL}/auth/login`;
         const data = {
             username,
             password
         }
         axios.post(url, data)
             .then(resp => {
-                const { token } = resp.data;
-                console.log('token', ': ', token);
+                console.log('resp.data', ': ', resp.data);
                 //To store in local storage
-                localStorage.setItem('token', token);
-                this.setState({ message: 'Successful login.' })
+                this.setState({ message: resp.data })
                 // after this step is a good moment to REROUTE to home page.
 
             })

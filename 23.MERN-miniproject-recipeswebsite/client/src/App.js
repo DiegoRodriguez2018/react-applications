@@ -4,10 +4,10 @@ import './stylesheets/App.css';
 
 
 // import Dashboard from './components/Dashboard'
-import LogIn from './components/LogIn'
-import Register from './components/Register'
-import Home from './components/Home'
-import Recipes from './components/Recipes'
+import LogIn from './Components/LogIn'
+import Register from './Components/Register'
+import Home from './Components/Home'
+import Recipes from './Components/Recipes'
 
 class App extends Component {
   render() {

@@ -4,28 +4,41 @@ import axios from 'axios';
 class Form extends Component {
   // just starting an empty state object
   state = {};
-  
-  componentDidMount(){
-    console.log('this.props',': ', this.props);
-    
-  }
-  
   handleInputChange = (e) => {
     const { value, id } = e.currentTarget;
     this.setState({ [id]: value });
   }
- 
   submitForm = (e) => {
+    const baseURL =  process.env.REACT_APP_URL;
+    console.log('baseURL',': ', baseURL)
     e.preventDefault();
-    // console.log('this.props.handleSubmit',': ', this.props.handleSubmit);
-    // console.log('this.state',': ', this.state);
+    // post request code goes here. 
+    console.log('submitting request');
     const { username, password } = this.state;
-    this.props.handleSubmit(username, password);
-    // note we are calling the function passed in the props, but we are calling it with the data that is in this components state. 
-    // also note that we defined handleSubmit so it takes the same arguments.
+    const url = `${baseURL}/auth/register`;
+    const data = {
+      username,
+      password
+    }
+    
+    axios.post(url, data)
+    .then(resp => {
+      
+      // console.log('resp.data',': ', resp.data);
+      
+      this.setState({ message: resp.data })
+      //TODO: generate a token and redirect to dashboard 
+      
+      })
+      .catch(error => {
+
+        this.setState({ error })
+
+      })
   }
- 
+
   render() {
+    const { error, message } = this.state;
     return (
       <React.Fragment>
         <form>
@@ -38,6 +51,9 @@ class Form extends Component {
           <button onClick={this.submitForm}>Send to API</button>
         </form>
 
+        {message && <p> {message} </p>}
+
+        {error && <p> {error} </p>}
 
 
       </React.Fragment>

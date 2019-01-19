@@ -5,12 +5,13 @@ class Recipes extends Component {
     state = {}
 
     componentDidMount() {
+        const baseURL =  process.env.REACT_APP_URL;
+        console.log('baseURL',': ', baseURL);
         
-        axios.get('http://localhost:3500/recipes')
+        axios.get(`${baseURL}/auth/recipes`)
             .then(res => {
                 this.setState({ recipes: res.data })
                 console.log('this.state.recipes', ': ', this.state.recipes);
-
             })
     }
 

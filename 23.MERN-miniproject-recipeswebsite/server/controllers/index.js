@@ -6,6 +6,6 @@ router.use('/', require ('./public'));
 router.use ('/protected', require('./protected'));
 
 //Authentication and JSON web tokens:
-router.use ('/auth', require('./auth'));
+router.use ('/auth', require('./auth2'));
 
 module.exports =  router;
